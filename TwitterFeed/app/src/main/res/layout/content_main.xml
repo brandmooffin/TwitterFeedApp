@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <EditText
+        android:id="@+id/search_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_hint"/>
+
+    <TextView
+        android:id="@+id/refresh_interval_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_text"
+        android:text="@string/refresh_interval_desc"/>
+
+    <Spinner
+        android:id="@+id/refresh_interval_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/refresh_interval_desc"
+        android:spinnerMode="dropdown"/>
+
+
+    <ProgressBar android:id="@+id/main_progress" style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/refresh_interval_spinner"
+        android:layout_alignTop="@id/refresh_interval_spinner"
+        android:layout_toEndOf="@id/refresh_interval_spinner"
+        android:layout_marginBottom="8dp" android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/search_result_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/refresh_interval_spinner"/>
+
+    <ListView android:id="@id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_result_desc"
+        >
+    </ListView>
+
+</RelativeLayout>
